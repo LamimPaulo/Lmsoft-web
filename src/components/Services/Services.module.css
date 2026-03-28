@@ -1,0 +1,80 @@
+.services {
+  padding-block: var(--pad-section);
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.header {
+  margin-bottom: var(--space-12);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+/* Shared reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card uses box-shadow lift (avoids transform conflict with reveal) */
+.card {
+  padding: var(--space-8);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--bg-card);
+  transition:
+    border-color var(--t),
+    background var(--t),
+    box-shadow var(--t),
+    opacity 0.55s var(--ease),
+    transform 0.55s var(--ease);
+}
+
+.card:hover {
+  border-color: var(--border-h);
+  background: var(--bg-card-h);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  color: var(--blue);
+  margin-bottom: var(--space-6);
+  transition: transform var(--t), color var(--t);
+}
+
+.card:hover .icon {
+  transform: scale(1.1);
+  color: var(--indigo);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  line-height: 1.7;
+}
